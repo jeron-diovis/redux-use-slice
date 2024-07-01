@@ -1,5 +1,6 @@
-import { mergeConfig, UserConfig } from 'vite'
+import { UserConfig, mergeConfig } from 'vite'
 import { defineConfig as defineVitestConfig } from 'vitest/config'
+
 import viteConfig from './vite.config'
 
 export default defineVitestConfig(() => {
@@ -9,7 +10,7 @@ export default defineVitestConfig(() => {
       test: {
         reporters: 'verbose',
       },
-    }),
+    })
   )
   return config as UserConfig
 })
