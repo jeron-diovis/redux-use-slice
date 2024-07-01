@@ -1,5 +1,6 @@
 {
   "name": "redux-use-slice",
+  "type": "module",
   "packageManager": "pnpm@8.0.0",
   "version": "0.0.1",
   "description": "Bind dispatch to redux-toolkit slice's actions",
@@ -16,17 +17,17 @@
     "dist"
   ],
   "scripts": {
-    "type:check": "tsc --noEmit",
-    "dev": "NODE_ENV=development vite",
+    "dev": "vite",
     "clean": "rimraf dist",
-    "build": "pnpm run type:check && pnpm run clean && pnpm run build:bundle && pnpm run build:types",
-    "build:bundle": "NODE_ENV=production vite build",
-    "build:types": "tsc -p tsconfig.types.json",
+    "build": "pnpm run lint && pnpm run clean && pnpm run build:src",
+    "build:src": "tsc -p tsconfig.build.json",
     "test": "vitest run --mode development",
     "test:dev": "vitest --ui --mode development",
     "test:coverage": "vitest run --mode development --coverage",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "fix": "pnpm run lint --fix",
+    "lint": "pnpm run lint:js && pnpm run lint:ts",
+    "lint:js": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:ts": "tsc --noEmit",
+    "fix": "pnpm run lint:js --fix",
     "format:staged": "prettier-eslint --write",
     "format:scripts": "pnpm run format:staged -- '**/*.{js,jsx,ts,tsx}'",
     "format:others": "pnpm run format:staged -- 'src/**/*.{css,scss,json}'",
@@ -50,15 +51,25 @@
   },
   "devDependencies": {
     "@jd/eslint-config": "gist:48e5eae2308a9b6169bcc98fea215d61",
+    "@reduxjs/toolkit": "^2.2.6",
     "@types/node": "^20.14.9",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@vitest/ui": "^1.6.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
     "prettier-eslint-cli": "^8.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "rimraf": "^5.0.7",
     "typescript": "^5.5.2",
     "vite": "^5.3.2",
     "vitest": "^1.6.0"
+  },
+  "peerDependencies": {
+    "@reduxjs/toolkit": ">=2.2.6",
+    "react": ">=18.3.1",
+    "react-redux": ">=9.1.2"
   }
 }

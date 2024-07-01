@@ -1,5 +1,9 @@
 extends: "@jd/eslint-config"
 
+settings:
+  react:
+    version: "detect"
+
 overrides:
   - files:
       - "!src/**"

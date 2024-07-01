@@ -20,14 +20,11 @@
     "isolatedModules": true,
     "removeComments": true,
     "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "types": [
+      "vitest/globals"
+    ]
   },
-  "include": ["src"],
-  "exclude": ["dist", "node_modules"]
+  "include": ["src"]
 }

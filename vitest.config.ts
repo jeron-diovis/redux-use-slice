@@ -8,6 +8,7 @@ export default defineVitestConfig(() => {
     viteConfig,
     defineVitestConfig({
       test: {
+        globals: true,
         reporters: 'verbose',
       },
     })
