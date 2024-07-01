@@ -35,14 +35,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zadzbw/vite-lib-template.git"
+    "url": "git+https://github.com/jeron-diovis/redux-use-slice.git"
   },
-  "author": "",
+  "author": "Jeron Diovis <void.jeron.diovis@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zadzbw/vite-lib-template/issues"
-  },
-  "homepage": "https://github.com/zadzbw/vite-lib-template#readme",
+  "homepage": "https://github.com/jeron-diovis/redux-use-slice#readme",
   "browserslist": [
     "defaults",
     "> 1%",
